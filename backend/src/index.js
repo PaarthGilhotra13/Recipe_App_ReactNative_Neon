@@ -5,7 +5,7 @@ import { favoritesTable } from "./db/schema.js";
 import { and, eq } from "drizzle-orm";
 import job from "./config/cron.js";
 
-job.start()
+if (ENV.NODE_ENV ==="production")job.start()
 const app = express()
 const PORT = process.env.PORT || 5001
 
