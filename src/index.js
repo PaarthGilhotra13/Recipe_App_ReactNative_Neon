@@ -5,11 +5,12 @@ import { favoritesTable } from "./db/schema.js";
 import { and, eq } from "drizzle-orm";
 import job from "./config/cron.js";
 import ENV from "./config/env.js";
-
+import job from "./config/cron.js"
 if (ENV.NODE_ENV ==="production")job.start()
 const app = express()
 const PORT = process.env.PORT || 5001
 
+if(ENV.NODE_ENV==="production")job.start()
 app.use(express.json())
 app.get("/api/health", (req, res) => {
     res.send({
