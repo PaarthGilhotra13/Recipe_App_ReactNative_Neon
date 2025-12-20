@@ -10,7 +10,7 @@ if (ENV.NODE_ENV ==="production")job.start()
 const app = express()
 const PORT = process.env.PORT || 5001
 
-if(ENV.NODE_ENV==="production")job.start()
+if(ENV.NODE_ENV==="production"){job.start()}
 app.use(express.json())
 app.get("/api/health", (req, res) => {
     res.send({
